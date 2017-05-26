@@ -8,8 +8,10 @@ services:
       - ERL_TOP=/otp
       - MSSQL_UID=sa
       - MSSQL_PWD=The_Password
+      - ODBCINI=/odbc_ini/.odbc.ini
     volumes:
       - ./otp:/otp
+      - ./dev_home:/odbc_ini
 
   sql_server:
     image: microsoft/mssql-server-linux
