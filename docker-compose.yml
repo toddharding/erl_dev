@@ -1,0 +1,15 @@
+version: "3"
+services:
+  dev:
+    build: ./dev_docker
+    depends_on: sql_server
+    volumes:
+      - ./otp:/otp
+
+  sql_server:
+    image: microsoft/mssql-server-linux
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=The_Password
+    ports:
+      - "1433:1433"
