@@ -2,7 +2,12 @@ version: "3"
 services:
   dev:
     build: ./dev_docker
-    depends_on: sql_server
+    depends_on:
+      - sql_server
+    environment:
+      - ERL_TOP=/otp
+      - MSSQL_UID=sa
+      - MSSQL_PWD=The_Password
     volumes:
       - ./otp:/otp
 
