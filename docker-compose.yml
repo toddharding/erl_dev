@@ -12,6 +12,8 @@ services:
     volumes:
       - ./otp:/otp
       - ./dev_home:/odbc_ini
+      - ./erlang_binaries/bin:/usr/local/bin
+      - ./erlang_binaries/lib:/usr/local/lib/erlang
 
   sql_server:
     image: microsoft/mssql-server-linux
